@@ -1,0 +1,339 @@
+/*
+/* style file by Kadin D.
+============================
+00: css variable
+01: color
+02: Typography
+============================
+*/
+
+/* 00 css variable*/
+:root {
+    --body-color: hsl(240, 82%, 48%);
+    --page-color: hsla(196, 34%, 55%, 0.8);
+    --sidebar-color: hsla(12, 33%, 94%, 0.8);
+    /** font color **/
+    --font-color: rgb(2, 17, 22);
+    /** layout variables **/
+    --page-top-position: 85%;
+    --page-width: 30%;
+    --bottom-bar-height: 15vh;
+    /** front bar **/
+    --page-top-positiion: 85%;
+    --page-top-width: 10%;
+
+}
+
+/* 01 color */
+body {
+    background-color: var(--body-color);
+}
+
+#zen-intro {
+    background-color: var(--page-color);
+}
+
+#zen-supporting {
+    background-color: var(--page-color);
+}
+
+.sidebar {
+    background-color: rgb(19, 167, 51);
+}
+
+h1 {
+    /* finish */
+}
+
+/* 02 Layout */
+div.explanation,
+div.requirements,
+div.participation,
+div.benefits {
+    position: fixed;
+    width: var(--page-width);
+    top: var(--page-top-postion);
+    background-image: url(..img/newspaper1.jpg);
+    /* transition: all 4s eaase-in-out; */
+    transition: all 4s ease-in-out;
+}
+
+/*div.extra2{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+*/
+
+
+div.explanation {
+    left: 1%
+}
+
+div.requirements {
+    left: 18vw;
+}
+
+div.participation {
+    left: 24%
+}
+
+div.benefits {
+    left: 36%
+}
+
+/* finish it for requirements/benefits/participation */
+
+aside.sidebar {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    /* bottom: 0; */
+    /*adjust width/height */
+    width: 20%;
+    height: 100%;
+}
+
+section.intro {
+    /*finish as much as can */
+    position: fixed;
+    bottom: 5%;
+    left: 30%;
+    width: 30%;
+    height: 80%;
+    background-image: url(..img/newspaper1.jpg);
+    padding: 2%;
+    border: 2px dashed rgb(2, 17, 22);
+    margin-left: 10px;
+    text-indent: 1px;
+    transform: rotate(-10deg) translate(-100px, 0);
+}
+
+/*div.extra2{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--bottom-bar-height);
+    background-color: var(--bottom-bar-color);
+}
+*/
+
+div.extra1 {
+    position: fixed;
+    bottom: 5%;
+    left: 20%;
+    width: 30%;
+    height: 80%;
+    background-image: url(..img/newspaper1.jpg);
+    z-index: -1;
+}
+
+/**03: Typography **/
+@font-face {
+    font-family: 'myfont';
+    src: url(../fonts/chunkfive.eot);
+}
+
+header h1 {
+    font-family: 'myfont', sans-serif;
+    font-weight: 100;
+    font-size: 1.25em;
+    letter-spacing: normal;
+    line-height: 1em;
+}
+
+header h2 {
+    font-family: "Baskervville SC", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+#design-selection h3 {
+    visibility: hidden;
+}
+
+/* hide the archive section/ resource section */
+#design-archives {
+    display: none;
+}
+
+#zen-resources {
+    display: none;
+}
+
+#zen-preamble {
+    display: none;
+}
+
+#zen-supporting {
+    display: block;
+}
+
+#zen-participation {
+    display: none;
+}
+
+#zen-explanation {
+    display: none;
+}
+
+#zen-requirements {
+    display: none;
+}
+
+#zen-benefits {
+    display: none;
+}
+
+/* create tabs for the folder */
+div.explanantion h3,
+div.requirements h3,
+div.benefits h3,
+div.participation h3 {
+    margin-top: -5%;
+    width: 12vw;
+    background-color: blueviolet;
+}
+
+/* 04, selector practice, transform, transition, .... */
+a:hover {
+    font-size: 1.5em;
+}
+
+div.explanation:active {
+    top: 15vh;
+    height: 90vh;
+}
+
+div.requirements:active {
+    top: 15vh;
+    height: 90vh;
+}
+
+div.benefits:active {
+    top: 15vh;
+    height: 90vh;
+}
+
+div.participation:active {
+    top: 15vh;
+    height: 90vh;
+}
+
+/* finish the active action for requirement/benefits/participation */
+p::first-letter {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+p:nth-child(2n) {
+    background-color: bisque;
+
+}
+
+p:nth-child(2n+1) {
+    background-color: aquamarine;
+}
+
+li:first-of-type {}
+
+
+
+/** Border radius for the tab **/
+div.explanantion h3,
+div.requirements h3,
+div.benefits h3,
+div.participation h3 {
+    border-top-left-radius: 50px;
+    padding-left: 15px;
+}
+
+/** list style image **/
+ul {
+    list-style-image: url(../img/star.png);
+}
+
+/** transform and transition **/
+section.intro h3:hover~p {
+    opacity: 1;
+    transition: all 3s ease-in-out;
+}
+
+section.intro h3:hover~p {
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+@keyframes backandforth {
+    from {
+        transform: translate(-500px, 0);
+    }
+
+    30% {
+        transform: translate(-300px, 0);
+    }
+
+    50% {
+        transform: translate(300px, 0);
+    }
+
+    70% {
+        transform: translate(500px, 0);
+    }
+
+    90% {
+        transform: translate(600px, 0);
+    }
+}
+
+footer {
+    position: fixed;
+    /* bottom: 1vh; */
+    left: 50%;
+    z-index: 4;
+    animation: 10s ease-in-out 2s alternate infinite back
+}
+
+aside.sidebar {
+    clip-path: polygon(0 0, 0 40%, 50% 60%, 100% 40%, 100% 0);
+}
+
+/** codepen.io grid practice **/
+.one {
+    grid-column: 2/4;
+    grid-row: 2/4;
+}
+
+.two {
+    grid-column: 1/ 4;
+    grid-row: 1/2;
+}
+
+.three {
+    grid-column: 1/ 2;
+    grid-row: 2/ 4;
+}
+
+.four {
+    grid-column: 0/ 1;
+    grid-row: 1/ 3;
+}
+
+.five {
+    grid-column: 1/ 4;
+    grid-row: 4/ 5;
+}
+
+.six {
+    grid-column: 3/ 5;
+    grid-row: 3/ 5;
+}
